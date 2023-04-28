@@ -1,0 +1,61 @@
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 85%;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 25px;
+}
+
+.TMDB-attribution {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  .TMDB-attribution img {
+    width: 5%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+  
+  .TMDB-attribution p {
+    color: lightseagreen;
+    font-size: 12px;
+    margin-left: 10px; 
+    margin-top: 75px;
+  }
+
+  .WatchMode-attribution {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+
+  .WatchMode-attribution img {
+    width: 15%;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    margin-left: 20px;
+  }
+
+  .WatchMode-attribution p {
+    color: lightseagreen;
+    font-size: 12px;
+    margin-left: 10px; 
+    margin-top: 30px;
+  }
+
+  .WatchMode-attribution p span {
+    font-size: 18px;
+    color: lightskyblue
+  }
