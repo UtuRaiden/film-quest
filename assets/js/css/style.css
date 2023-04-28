@@ -15,3 +15,22 @@ ul {
     margin-right: 25%;
     margin-top: 25px;
 }
+
+.TMDB-attribution {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  .TMDB-attribution img {
+    width: 5%;
+    margin-bottom: 50px;
+    margin-top: 20px;
+  }
+  
+  .TMDB-attribution p {
+    color: lightseagreen;
+    font-size: 12px;
+    margin-left: 10px; 
+    margin-top: 30px;
+  }
