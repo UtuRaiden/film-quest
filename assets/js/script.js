@@ -33,6 +33,7 @@ fetch(Movie)
 // Function to create movie card results
 function createMovieCards(movies) {
     var movieCards = document.getElementById('movie-cards')
+    movieCards.textContent = ''
 
     for (entry of movies) {
         var movieCard = document.createElement('article')
