@@ -1,19 +1,5 @@
-#logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 35px;
-    margin-left: 25%;
-    margin-right: 25%;
-    width: 85%;
-}
-
-ul {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 25px;
+img {
+  height: 3em;
 }
 
 .TMDB-attribution {

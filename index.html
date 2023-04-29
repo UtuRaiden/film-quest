@@ -7,23 +7,21 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <link rel="stylesheet" href="assets/js/css/style.css"/>
     <!-- <link rel="stylesheet" href="style.css"> -->
-    <title>Movie-App</title>
+    <title>FilmQuest</title>
 </head>
 <body>
     <nav class="container">
-        <div id = "logo">
-            <img src = "assets/js/images/logo.jpeg">
-        </div>
-     </nav>   
-        <ul>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>                
+        <ul id="logo">
+            <li onclick="window.location.reload()"><img src="assets/js/images/logo.jpeg"></li>
         </ul>
+        <ul id="links">
+            <li><a href="#">Watchlist</a></li>               
+        </ul>
+    </nav>
     
     <main id='searchArea' class="container">
         <!-- Search -->
-        <input type="search" id="searchInput" name="search" placeholder="Search">
+        <input type="search" id="searchInput" name="search" placeholder="Search title">
         <button id="searchBtn" >Search</button>
     </main>       
     <div class ="TMDB-attribution">
