@@ -5,23 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="assets/js/css/style.css"/>
     <!-- <link rel="stylesheet" href="style.css"> -->
-    <title>Movie-App</title>
+    <title>FilmQuest</title>
 </head>
 <body>
     <nav class="container">
-        <h2><strong>Brand</strong></h2>
-        <ul>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>                
+        <ul id="logo">
+            <li onclick="window.location.reload()"><img src="assets/js/images/logo.jpeg"></li>
+        </ul>
+        <ul id="links">
+            <li><a href="#">Watchlist</a></li>               
         </ul>
     </nav>
+    
     <main id='searchArea' class="container">
         <!-- Search -->
-        <input type="search" id="searchInput" name="search" placeholder="Search">
+        <input type="search" id="searchInput" name="search" placeholder="Search title">
         <button id="searchBtn" >Search</button>
     </main>       
+    <div class ="TMDB-attribution">
+        <img src = "assets/js/images/TMDB-logo.svg">
+        <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+    </div>
+    <div class ="WatchMode-attribution">
+        <p>This product uses the WatchMode API which can be found at the following link: <a href="https://api.watchmode.com/"><span>WatchModeAPI</span></a> </p>
+        <img src = "assets/js/images/WatchMode-logo.png"></div>
 </body>
 <script src="assets/js/script.js"></script>
 </html>
