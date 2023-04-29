@@ -22,8 +22,36 @@ fetch(Movie)
     })
     .then(function(data){
         console.log(data);
+        // create movie cards after getting results
+        createMovieCards(data.results)
     })
     .catch(function(error){
         console.error(error)
     })
+}
+
+// Function to create movie card results
+function createMovieCards(movies) {
+    var movieCards = document.getElementById('movie-cards')
+    movieCards.textContent = ''
+
+    for (entry of movies) {
+        var movieCard = document.createElement('article')
+        var moviePoster = document.createElement('img')
+
+        if (entry.poster_path !== null) {
+            moviePoster.setAttribute('src',`https://image.tmdb.org/t/p/original${entry.poster_path}`)
+            movieCard.append(moviePoster)
+        }
+
+        var movieTitle = document.createElement('p')
+        var movieYear = document.createElement('p')
+
+        movieTitle.textContent = entry.original_title
+        movieYear.textContent = entry.release_date
+        
+        
+        movieCard.append(movieTitle, movieYear)
+        movieCards.appendChild(movieCard)
+    }
 }
