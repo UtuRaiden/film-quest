@@ -47,7 +47,7 @@ fetch(Movie)
     })
 }
 // Function to create movie card results
-function createMovieCards(movies) {
+async function createMovieCards(movies) {
     movieCards.textContent = ''
 
     for (entry of movies) {
@@ -58,32 +58,30 @@ function createMovieCards(movies) {
             moviePoster.setAttribute('src',`https://image.tmdb.org/t/p/original${entry.poster_path}`)
             movieCard.append(moviePoster)
         }
-        FindWhereWatch(movies)
-
-       async function FindWhereWatch(){
-            var titleId = entry.id;
-            console.log(titleId);
-            var WMsearch = await fetch(WM_START+titleId+WM_END);
-            var WMdata = await WMsearch.json();
-            console.log(WMdata);
-            var i =0;
-            var length = WMdata.length -1;
-            console.log(length);   
-            var sourceCheck = 0;         
-            while(i < length + 1){
-                var sourceID = WMdata[i].source_id
-
-                if (sourceID != sourceCheck){
-                    var whereWatchLink = document.createElement('href');
-                    whereWatchLink.href = WMdata[i].web_url
-                    console.log(whereWatchLink.href);
-                    whereWatchLink.textContent = WMdata[i].name
-                    sourceCheck = sourceID
-                }
-                console.log(i);
-                i++;
+      //  FindWhereWatch(movies)
+        var titleId = entry.id;
+        console.log(titleId);
+        var WMsearch = await fetch(WM_START+titleId+WM_END);
+        var WMdata = await WMsearch.json();
+        console.log(WMdata);
+        var i =0;
+        var length = WMdata.length -1;
+        console.log(length);   
+        var sourceCheck = 0;         
+        while(i < length + 1){
+            var sourceID = WMdata[i].source_id
+    
+            if (sourceID != sourceCheck){
+                var whereWatchLink = document.createElement('href');
+                whereWatchLink.href = WMdata[i].web_url
+                console.log(whereWatchLink.href);
+                whereWatchLink.textContent = WMdata[i].name
+                sourceCheck = sourceID
             }
-       }
+            console.log(i);
+            i++;
+        }
+
        
         var movieTitle = document.createElement('h3')
         var movieYear = document.createElement('p')
@@ -94,11 +92,13 @@ function createMovieCards(movies) {
         favBtnEl.textContent = 'Add to list'
         
         
-        movieCard.append(movieTitle,favBtnEl,movieYear)
+        movieCard.append(movieTitle,favBtnEl,movieYear,whereWatchLink)
         movieCards.appendChild(movieCard)
     }
 }
-
+async function FindWhereWatch(){
+   
+}
 
 
 function favSave(movie){
