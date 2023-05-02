@@ -15,7 +15,7 @@ searchAreaEl.addEventListener('click',function(event){
     var input = searchInputEl.value
     input = encodeURIComponent(input)
     console.log(input)
-    var MDB_SEARCH = MDB_BASE + "Regular Show" // input
+    var MDB_SEARCH = MDB_BASE + input
     getMovieResults(MDB_SEARCH)
 })
 
@@ -58,7 +58,7 @@ async function createMovieCards(movies) {
             moviePoster.setAttribute('src',`https://image.tmdb.org/t/p/original${entry.poster_path}`)
             movieCard.append(moviePoster)
         }
-      //  FindWhereWatch(movies)
+      
         var titleId = entry.id;
         console.log(titleId);
         var WMsearch = await fetch(WM_START+titleId+WM_END);
@@ -67,22 +67,27 @@ async function createMovieCards(movies) {
         var i =0;
         var length = WMdata.length -1;
         console.log(length);   
-        var sourceCheck = 0;         
-        while(i < length + 1){
+        var sourceCheck = 0;    
+        const whereWatchLink = []
+        if (length<0){
+            var whereWatchWord = document.createElement('p');
+            whereWatchWord.textContent ="Sorry this is unavailable"
+        }    
+            while(i < length + 1){
             var sourceID = WMdata[i].source_id
+            var whereWatchWord = document.createElement('p');
+
     
             if (sourceID != sourceCheck){
-                var whereWatchLink = document.createElement('href');
-                whereWatchLink.href = WMdata[i].web_url
-                console.log(whereWatchLink.href);
-                whereWatchLink.textContent = WMdata[i].name
+                whereWatchLink.push(WMdata[i].name)
                 sourceCheck = sourceID
+                whereWatchWord.append(whereWatchLink)
+                console.log(whereWatchWord)
             }
             console.log(i);
             i++;
         }
-
-       
+        
         var movieTitle = document.createElement('h3')
         var movieYear = document.createElement('p')
         var favBtnEl = document.createElement('button')
@@ -91,15 +96,10 @@ async function createMovieCards(movies) {
         movieYear.textContent = entry.release_date
         favBtnEl.textContent = 'Add to list'
         
-        
-        movieCard.append(movieTitle,favBtnEl,movieYear,whereWatchLink)
+        movieCard.append(movieTitle,favBtnEl,movieYear,whereWatchWord)
         movieCards.appendChild(movieCard)
     }
 }
-async function FindWhereWatch(){
-   
-}
-
 
 function favSave(movie){
     if(favList.includes(movie)) return
