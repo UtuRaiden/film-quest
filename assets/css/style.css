@@ -113,6 +113,9 @@
     text-shadow: 1px 1px 10px lightslategray;
   }
 
-  #watchList button {
-
+  #movie-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    margin-top: 20px; 
   }

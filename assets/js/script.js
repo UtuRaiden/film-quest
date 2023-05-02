@@ -74,11 +74,22 @@ function createMovieCards(movies) {
         movieYear.textContent = entry.release_date
         favBtnEl.textContent = 'Add to list'
         
-        
-        movieCard.append(movieTitle,favBtnEl,movieYear)
+        // wrap elements in container div
+        var container = document.createElement('div')
+        container.append(moviePoster, movieTitle, movieYear, favBtnEl)
+
+        // apply CSS styling to container div
+        container.style.display = 'flex'
+        container.style.flexDirection = 'column'
+        container.style.justifyContent = 'space-between'
+        container.style.height = '100%'
+
+        // append container div to movieCards element
         movieCards.appendChild(movieCard)
+        movieCard.appendChild(container)
     }
 }
+
 
 
 
