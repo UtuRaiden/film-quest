@@ -53,7 +53,6 @@ fetch(Movie)
     })
 }
 
-// Function to create movie card results
 function createMovieCards(movies) {
     movieCards.textContent = ''
 
@@ -71,7 +70,7 @@ function createMovieCards(movies) {
         var favBtnEl = document.createElement('button')
 
         movieTitle.textContent = entry.original_title
-        movieYear.textContent = entry.release_date
+        movieYear.textContent = new Date(entry.release_date).toLocaleDateString('en-US', {month: '2-digit', day: '2-digit', year: 'numeric'})
         favBtnEl.textContent = 'Add to list'
         
         // wrap elements in container div
