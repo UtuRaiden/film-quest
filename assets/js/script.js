@@ -21,9 +21,10 @@ movieCards.addEventListener('click',function(event){
     var isButton = event.target.nodeName === 'BUTTON'
     var element = event.target
     if(!isButton)return
-    var favName = element.previousElementSibling.textContent;
+    var favName = element.previousElementSibling.previousElementSibling.textContent;
     favSave(favName)
 })
+
 
 searchInputEl.addEventListener('keypress', function(event) {
     if (event.keyCode === 13) {
