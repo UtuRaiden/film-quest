@@ -3,7 +3,9 @@ var searchInputEl = document.querySelector('#searchInput')
 var searchBtnEl = document.querySelector('#searchBtn')
 var movieCards = document.getElementById('movie-cards')
 
-var MDB_BASE = 'https://api.themoviedb.org/3/search/movie?api_key=a1ad9f4fd19c47b55d47d59ffc20d5bc&query='
+var MDB_BASE = 'https://api.themoviedb.org/3/search/movie?api_key=a1ad9f4fd19c47b55d47d59ffc20d5bc&query=';
+var WM_START = 'https://api.watchmode.com/v1/title/movie-';
+var WM_END = '/sources/?apiKey=XGdAAH7W3meP3wdEFoABmfraxujlvVnx0uycWvEl';
 
 favList = []
 
@@ -13,8 +15,9 @@ searchAreaEl.addEventListener('click',function(event){
     var input = searchInputEl.value
     input = encodeURIComponent(input)
     console.log(input)
-    var MDB_SEARCH = MDB_BASE + input
+    var MDB_SEARCH = MDB_BASE + "Regular Show" // input
     getMovieResults(MDB_SEARCH)
+    getWhereToResults(MDB_SEARCH)
 })
 
 movieCards.addEventListener('click',function(event){
@@ -45,6 +48,8 @@ fetch(Movie)
     })
 }
 
+function getWhereToResults()
+
 // Function to create movie card results
 function createMovieCards(movies) {
     movieCards.textContent = ''
@@ -57,9 +62,16 @@ function createMovieCards(movies) {
             moviePoster.setAttribute('src',`https://image.tmdb.org/t/p/original${entry.poster_path}`)
             movieCard.append(moviePoster)
         }
+        
+      //  var titleId = entry.id;
+      //  console.log(titleId);
+      //  var WMsearch = fetch(WM_START+titleId+WM_END);
+       // var WMdata = WMsearch.json();
+      //  console.log(WMdata);
 
         var movieTitle = document.createElement('h3')
         var movieYear = document.createElement('p')
+        var whereWatch = document.createElement('p')
         var favBtnEl = document.createElement('button')
 
         movieTitle.textContent = entry.original_title
