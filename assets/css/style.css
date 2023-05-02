@@ -1,0 +1,94 @@
+#logo img {
+  height: 15em;
+  border-radius: 25px;
+  position: relative;
+  animation-name: logo;
+  animation-duration: 4s;
+}
+
+@keyframes logo {
+  0%   {left:0px; top:0px;}
+  25%  {left:75px; top:0px;}
+  50%  {left:75px; top:50px;}
+  75%  {left:0px; top:50px;}
+  100% {left:0px; top:0px;}
+}
+
+
+.TMDB-attribution {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  .TMDB-attribution img {
+    width: 5%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+  
+  .TMDB-attribution p {
+    color: lightseagreen;
+    font-size: 12px;
+    margin-left: 10px; 
+    margin-top: 75px;
+  }
+
+  .WatchMode-attribution {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+
+  .WatchMode-attribution img {
+    max-width: 20%;
+    height: auto;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    margin-left: 20px;
+  }
+
+  .WatchMode-attribution p {
+    color: lightseagreen;
+    font-size: 12px;
+    margin-left: 10px; 
+    margin-top: 30px;
+  }
+
+  .WatchMode-attribution p span {
+    font-size: 18px;
+    color: lightskyblue
+  }
+
+  #links li span {
+    cursor: pointer;
+    border: 1px solid;
+    padding: 5px; 
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  #links li span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  #links li:hover span {
+    padding-right: 25px;
+  }
+  
+  #links li:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+ 
