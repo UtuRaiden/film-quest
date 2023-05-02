@@ -70,12 +70,17 @@ function createMovieCards(movies) {
             var length = WMdata.length -1;
             console.log(length);   
             var sourceCheck = 0;         
-            while(i<length){
+            while(i < length + 1){
                 var sourceID = WMdata[i].source_id
-                if (sourceID == sourceCheck){
-                    var whereWatch = document.createElement('href');
 
+                if (sourceID != sourceCheck){
+                    var whereWatchLink = document.createElement('href');
+                    whereWatchLink.href = WMdata[i].web_url
+                    console.log(whereWatchLink.href);
+                    whereWatchLink.textContent = WMdata[i].name
+                    sourceCheck = sourceID
                 }
+                console.log(i);
                 i++;
             }
        }
