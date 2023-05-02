@@ -26,7 +26,16 @@ movieCards.addEventListener('click',function(event){
 })
 
 
-
+searchInputEl.addEventListener('keypress', function(event) {
+    if (event.keyCode === 13) {
+      var input = searchInputEl.value
+      input = encodeURIComponent(input)
+      console.log(input)
+      var MDB_SEARCH = MDB_BASE + input
+      getMovieResults(MDB_SEARCH)
+    }
+  })
+  
 
 
 function getMovieResults(Movie){
