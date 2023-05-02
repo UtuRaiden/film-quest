@@ -25,7 +25,6 @@ movieCards.addEventListener('click',function(event){
     favSave(favName)
 })
 
-
 searchInputEl.addEventListener('keypress', function(event) {
     if (event.keyCode === 13) {
       var input = searchInputEl.value
