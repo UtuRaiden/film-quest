@@ -1,6 +1,19 @@
-img {
-  height: 3em;
+#logo img {
+  height: 15em;
+  border-radius: 25px;
+  position: relative;
+  animation-name: logo;
+  animation-duration: 4s;
 }
+
+@keyframes logo {
+  0%   {left:0px; top:0px;}
+  25%  {left:75px; top:0px;}
+  50%  {left:75px; top:50px;}
+  75%  {left:0px; top:50px;}
+  100% {left:0px; top:0px;}
+}
+
 
 .TMDB-attribution {
     display: flex;
@@ -28,7 +41,8 @@ img {
   }
 
   .WatchMode-attribution img {
-    width: 15%;
+    max-width: 20%;
+    height: auto;
     margin-bottom: 50px;
     margin-top: 40px;
     margin-left: 20px;
@@ -44,4 +58,64 @@ img {
   .WatchMode-attribution p span {
     font-size: 18px;
     color: lightskyblue
+  }
+
+  #links li span {
+    cursor: pointer;
+    border: 1px solid;
+    padding: 5px; 
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  #links li span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  #links li:hover span {
+    padding-right: 25px;
+  }
+  
+  #links li:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  h1 {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px lightblue, 0 0 5px darkblue;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 75px;
+  }
+
+  h1 img {
+    padding: 10px;
+    border-radius: 15px;
+  }
+
+  #watchList {
+    padding: 150px;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 15px;
+    list-style: circle; 
+    text-shadow: 1px 1px 10px lightslategray;
+  }
+
+  #movie-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    margin-top: 20px; 
   }

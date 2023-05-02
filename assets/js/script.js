@@ -19,6 +19,17 @@ searchAreaEl.addEventListener('click',function(event){
     getMovieResults(MDB_SEARCH)
 })
 
+searchInputEl.addEventListener('keypress', function(event) {
+    if (event.keyCode === 13) {
+      var input = searchInputEl.value
+      input = encodeURIComponent(input)
+      console.log(input)
+      var MDB_SEARCH = MDB_BASE + input
+      getMovieResults(MDB_SEARCH)
+    }
+  })
+  
+
 movieCards.addEventListener('click',function(event){
     var isButton = event.target.nodeName === 'BUTTON'
     var element = event.target
@@ -93,7 +104,12 @@ async function createMovieCards(movies) {
         var favBtnEl = document.createElement('button')
 
         movieTitle.textContent = entry.original_title
-        movieYear.textContent = entry.release_date
+        const releaseDate = new Date(entry.release_date);
+        const month = releaseDate.getMonth() + 1;
+        const day = releaseDate.getDate();
+        const year = releaseDate.getFullYear();
+        movieYear.textContent = `${month}/${day}/${year}`;
+        
         favBtnEl.textContent = 'Add to list'
         
         movieCard.append(movieTitle,favBtnEl,movieYear,whereWatchWord)
