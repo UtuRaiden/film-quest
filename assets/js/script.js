@@ -17,7 +17,6 @@ searchAreaEl.addEventListener('click',function(event){
     console.log(input)
     var MDB_SEARCH = MDB_BASE + "Regular Show" // input
     getMovieResults(MDB_SEARCH)
-    getWhereToResults(MDB_SEARCH)
 })
 
 movieCards.addEventListener('click',function(event){
@@ -47,9 +46,6 @@ fetch(Movie)
         console.error(error)
     })
 }
-
-function getWhereToResults()
-
 // Function to create movie card results
 function createMovieCards(movies) {
     movieCards.textContent = ''
@@ -62,16 +58,30 @@ function createMovieCards(movies) {
             moviePoster.setAttribute('src',`https://image.tmdb.org/t/p/original${entry.poster_path}`)
             movieCard.append(moviePoster)
         }
-        
-      //  var titleId = entry.id;
-      //  console.log(titleId);
-      //  var WMsearch = fetch(WM_START+titleId+WM_END);
-       // var WMdata = WMsearch.json();
-      //  console.log(WMdata);
+        FindWhereWatch(movies)
 
+       async function FindWhereWatch(){
+            var titleId = entry.id;
+            console.log(titleId);
+            var WMsearch = await fetch(WM_START+titleId+WM_END);
+            var WMdata = await WMsearch.json();
+            console.log(WMdata);
+            var i =0;
+            var length = WMdata.length -1;
+            console.log(length);   
+            var sourceCheck = 0;         
+            while(i<length){
+                var sourceID = WMdata[i].source_id
+                if (sourceID == sourceCheck){
+                    var whereWatch = document.createElement('href');
+
+                }
+                i++;
+            }
+       }
+       
         var movieTitle = document.createElement('h3')
         var movieYear = document.createElement('p')
-        var whereWatch = document.createElement('p')
         var favBtnEl = document.createElement('button')
 
         movieTitle.textContent = entry.original_title
