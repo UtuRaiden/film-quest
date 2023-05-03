@@ -1,7 +1,7 @@
 # project-1-group-11
 Film Quest
 
-src="./https://uturaiden.github.io/flick-quest/"
+src="https://uturaiden.github.io/flick-quest/"
 
 ## Description
 
@@ -25,19 +25,19 @@ The usage of this webpage is to create one simple place where a user can go to g
 
 This application uses the following APIs:
 
-Watchmode: src="./https://api.watchmode.com/"
+Watchmode: src="https://api.watchmode.com/"
 
-The Movie Database src="./https://www.themoviedb.org/?language=en-US"
+The Movie Database src="https://www.themoviedb.org/?language=en-US"
 
 ## Contributors 
 
-Barron Peterson - src="./https://github.com/UtuRaiden"
+Barron Peterson - src="https://github.com/UtuRaiden"
 
-Wes Reed - src="./https://github.com/Wes217"
+Wes Reed - src="https://github.com/Wes217"
 
-Diego Borjas - src="./https://github.com/DiegoABorjas"
+Diego Borjas - src="https://github.com/DiegoABorjas"
 
-Brooke Adlesperger-Jones - src="./https://github.com/BAJones22"
+Brooke Adlesperger-Jones - src="https://github.com/BAJones22"
 
 ## License
 
