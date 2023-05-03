@@ -95,6 +95,10 @@ for (var i = 0; i < WMdata.length; i++) {
     console.log(whereWatchWord);
   }
 }
+if (WMdata.length===0){
+    var whereWatchWord=document.createElement('p');
+    whereWatchWord.textContent = "Sorry this is unavailable"
+}
 
         var movieTitle = document.createElement('h3')
         var movieYear = document.createElement('p')
