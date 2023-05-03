@@ -119,3 +119,13 @@
     grid-gap: 20px;
     margin-top: 20px; 
   }
+
+  .logo img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 100px;
+    width: auto;
+    border-radius: 10%;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    }
