@@ -72,22 +72,28 @@ var WMsearch = await fetch(WM_START+titleId+WM_END);
 var WMdata = await WMsearch.json();
 console.log(WMdata);
 var uniqueSources = new Set();
-const whereWatchLink = [];
+const whereWatchLinks = [];
 
 
 // function to show where to watch
 for (var i = 0; i < WMdata.length; i++) {
   var sourceID = WMdata[i].source_id;
-  var whereWatchWord = document.createElement('p');
-  whereWatchWord.classList.add('location'); 
-  
   if (!uniqueSources.has(sourceID)) {
-    whereWatchLink.push(WMdata[i].name);
     uniqueSources.add(sourceID);
-    whereWatchWord.append(whereWatchLink);
+    var whereWatchWord = document.createElement('p');
+    whereWatchWord.classList.add('location'); 
+    whereWatchLinks.push(WMdata[i].name);
+    var list = document.createElement('ul');
+    whereWatchLinks.forEach(function (link) {
+        var listItem = document.createElement('li');
+        listItem.textContent = link;
+        list.appendChild(listItem);
+    });
+    whereWatchWord.appendChild(list);
     console.log(whereWatchWord);
   }
 }
+
   
         var movieTitle = document.createElement('h3')
         var movieYear = document.createElement('p')
