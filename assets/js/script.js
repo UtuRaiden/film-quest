@@ -4,6 +4,7 @@ var searchBtnEl = document.querySelector('#searchBtn')
 var movieCards = document.getElementById('movie-cards')
 
 //establish api key for watchmode
+
 var MDB_BASE = 'https://api.themoviedb.org/3/search/movie?api_key=a1ad9f4fd19c47b55d47d59ffc20d5bc&query=';
 var WM_START = 'https://api.watchmode.com/v1/title/movie-';
 var WM_END = '/sources/?apiKey=XGdAAH7W3meP3wdEFoABmfraxujlvVnx0uycWvEl';
@@ -65,6 +66,7 @@ async function createMovieCards(movies) {
             moviePoster.setAttribute('src',`https://image.tmdb.org/t/p/original${entry.poster_path}`)
             movieCard.append(moviePoster)
         }
+
           
 var titleId = entry.id;
 console.log(titleId);
@@ -94,7 +96,6 @@ for (var i = 0; i < WMdata.length; i++) {
   }
 }
 
-  
         var movieTitle = document.createElement('h3')
         var movieYear = document.createElement('p')
         var favBtnEl = document.createElement('button')
