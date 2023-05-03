@@ -3,27 +3,24 @@ var watchListEl = document.querySelector('#watchList')
 favList = []
 
 watchListEl.addEventListener('click',function(event){
-    var isButton = event.target.nodeName === 'BUTTON'
-    var element = event.target
-    if(!isButton)return
-    var favName = element.parentElement.textContent;
-    //add a way to remove the deleted item fom the array
-    element.parentElement.remove()
-    refreshSavedList()
+    var isButton = event.target.nodeName === 'BUTTON';
+    var element = event.target;
+    if(!isButton)return;
+    var favName = element.previousElementSibling.textContent;
+    //delete item fom the array
+    var favIndex = favList.indexOf(favName);
+    favList.splice(favIndex, 1);
+    element.parentElement.remove();
+    refreshSavedList();
 })
-
-
-
-
-
+//create the watch list cards
 function createFavListElement(i){
     var itemEl = document.createElement('div');
     var liEl = document.createElement('li')
     liEl.textContent = favList[i]
     var delEl = document.createElement('button')
     delEl.textContent = 'Delete'
-    itemEl.append(liEl)
-    liEl.appendChild(delEl)
+    itemEl.append(liEl,delEl)
     return itemEl
 }
 
