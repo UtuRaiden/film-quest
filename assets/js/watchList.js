@@ -13,11 +13,7 @@ watchListEl.addEventListener('click',function(event){
     element.parentElement.remove();
     refreshSavedList();
 })
-
-
-
-
-
+//create the watch list cards
 function createFavListElement(i){
     var itemEl = document.createElement('div');
     var liEl = document.createElement('li')
