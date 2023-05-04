@@ -1,7 +1,7 @@
 # project-1-group-11
 Film Quest
 
-https://uturaiden.github.io/flick-quest/
+https://uturaiden.github.io/film-quest/
 
 ## Description
 
