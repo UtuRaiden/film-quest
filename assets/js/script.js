@@ -16,7 +16,6 @@ searchAreaEl.addEventListener('click',function(event){
     if(element !== searchBtnEl)return
     var input = searchInputEl.value
     input = encodeURIComponent(input)
-    console.log(input)
     var MDB_SEARCH = MDB_BASE + input
     getMovieResults(MDB_SEARCH)
 })
@@ -25,7 +24,7 @@ searchInputEl.addEventListener('keypress', function(event) {
     if (event.keyCode === 13) {
       var input = searchInputEl.value
       input = encodeURIComponent(input)
-      console.log(input)
+  
       var MDB_SEARCH = MDB_BASE + input
       getMovieResults(MDB_SEARCH)
     }
@@ -46,12 +45,12 @@ fetch(Movie)
         return res.json();
     })
     .then(function(data){
-        console.log(data);
+      
         // create movie cards after getting results
         createMovieCards(data.results)
     })
     .catch(function(error){
-        console.error(error)
+      
     })
 }
 // Function to create movie card results
@@ -69,10 +68,10 @@ async function createMovieCards(movies) {
 
           
 var titleId = entry.id;
-console.log(titleId);
+
 var WMsearch = await fetch(WM_START+titleId+WM_END);
 var WMdata = await WMsearch.json();
-console.log(WMdata);
+
 var uniqueSources = new Set();
 const whereWatchLinks = [];
 
@@ -92,7 +91,7 @@ for (var i = 0; i < WMdata.length; i++) {
         list.appendChild(listItem);
     });
     whereWatchWord.appendChild(list);
-    console.log(whereWatchWord);
+   
   }
 }
 if (WMdata.length===0){
